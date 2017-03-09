@@ -70,9 +70,9 @@ public class BabyBirths {
                 }
             }
 
-//            else {
-//                return -1;
-//            }
+            else {
+                return -1;
+            }
         }
 
         return rank;
@@ -91,7 +91,7 @@ public class BabyBirths {
 
     public void getRankTest() {
 //        getRank(2012, "Mason", "M");
-        System.out.println("Mason was ranked number " + getRank(2012, "Mason", "M") +
+        System.out.println("fuckwit was ranked number " + getRank(2012, "fuckwit", "M") +
                            " of that year");
 
     }
