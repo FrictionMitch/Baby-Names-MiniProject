@@ -5,6 +5,7 @@ public class Main {
 //        babyBirths.printNames();
 //        babyBirths.printNumberBorn();
         babyBirths.testTotalBirths();
+        babyBirths.getRankTest();
     }
 
 }

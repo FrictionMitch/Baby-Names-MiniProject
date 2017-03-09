@@ -57,4 +57,26 @@ public class BabyBirths {
         FileResource fr = new FileResource("testing/yob2012short.csv");
         totalBirths(fr);
     }
+
+    public int getRank(int year, String name, String gender){
+        int rank = 0;
+        FileResource fr = new FileResource("testing/yob" + year +"short.csv");
+        CSVParser parser = fr.getCSVParser(false);
+        for (CSVRecord record : parser) {
+            rank ++;
+            if(record.get(0) == name && record.get(1) == gender) {
+                return rank;
+            }
+//            else {
+//                return -1;
+//            }
+        }
+
+        return rank;
+    }
+
+    public void getRankTest() {
+//        getRank(2012, "Mason", "M");
+        System.out.println(getRank(2012, "Mason", "M"));
+    }
 }
