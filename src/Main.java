@@ -8,6 +8,7 @@ public class Main {
         babyBirths.getRankTest();
 //        babyBirths.testRank(2012, "dfsa", "M");
         babyBirths.testGetName();
+        babyBirths.testWhatIsNameInYear();
     }
 
 }

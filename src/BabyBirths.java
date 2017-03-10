@@ -115,4 +115,16 @@ public class BabyBirths {
     public void testGetName() {
         System.out.println("The girl ranked 2nd is: " + getName(2014, 2, "F"));
     }
+
+    public void whatIsNameInYear(String name, int year, int newYear, String gender) {
+//        FileResource fileYourYear = new FileResource("testing/yob" + year + "short.csv");
+//        FileResource fileNewYear = new FileResource("testing/yob" + newYear + "short.csv");
+
+        int rank = getRank(year, name, gender);
+        System.out.println("Isabella born in 2012 would be " + getName(newYear, rank, gender) + " in 2014");
+    }
+
+    public void testWhatIsNameInYear() {
+        whatIsNameInYear("Isabella", 2012, 2014, "F");
+    }
 }
