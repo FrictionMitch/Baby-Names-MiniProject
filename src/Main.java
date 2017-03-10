@@ -7,6 +7,7 @@ public class Main {
         babyBirths.testTotalBirths();
         babyBirths.getRankTest();
 //        babyBirths.testRank(2012, "dfsa", "M");
+        babyBirths.testGetName();
     }
 
 }

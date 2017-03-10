@@ -68,6 +68,7 @@ public class BabyBirths {
                 counter++;
                 if(record.get(0).equals(name)) {
                     rank = counter;
+                    break;
                 }
             }
         }
@@ -91,5 +92,27 @@ public class BabyBirths {
         System.out.println("Noah was ranked number " + getRank(2012, "Noah", "M") +
                            " of that year");
 
+    }
+
+    public String getName(int year, int rank, String gender) {
+        String name = "NO NAME";
+        int counter = 0;
+        FileResource fr = new FileResource("testing/yob" + year + "short.csv");
+        CSVParser parser = fr.getCSVParser(false);
+        for(CSVRecord record : parser) {
+            if(record.get(1).equals(gender)) {
+                counter++;
+                if(counter == rank) {
+                    name = (record.get(0));
+                    System.out.println(name);
+                    break;
+                }
+            }
+        }
+        return name;
+    }
+
+    public void testGetName() {
+        System.out.println("The girl ranked 2nd is: " + getName(2014, 2, "F"));
     }
 }
