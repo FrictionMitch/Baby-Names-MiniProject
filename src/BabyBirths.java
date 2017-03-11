@@ -180,4 +180,35 @@ public class BabyBirths {
     public void testAverageRank() {
         System.out.println("Mason\'s average was: " + getAverageRank("Mason", "M"));
     }
+
+    public int getTotalBirthsRankedHigher(int year, String name, String gender) {
+        int totalHigher = 0;
+        int currentRank = 0;
+        int rank = getRank(year, name, gender);
+        FileResource fr = new FileResource("testing/yob" + year + "short.csv");
+        CSVParser parser = fr.getCSVParser(false);
+        for(CSVRecord record : parser) {
+
+//            if(currentRank < rank && record.get(1).equals(gender)) {
+//                totalHigher += Integer.parseInt(record.get(2));
+//            }
+            if(record.get(1).equals(gender)) {
+                currentRank++;
+                System.out.println("The current rank is " + currentRank);
+                System.out.println("The rank is: " + rank);
+                if (currentRank < rank) {
+                    totalHigher += Integer.parseInt(record.get(2));
+                }
+            }
+//            if(record.get(0).equals(name)) {
+//                totalHigher -= Integer.parseInt(record.get(2));
+//                break;
+//            }
+        }
+        return totalHigher;
+    }
+
+    public void testGetTotalBirthsRankedHigher() {
+        System.out.println("Total births higher than Ethan were: " + getTotalBirthsRankedHigher(2012, "Ethan", "M"));
+    }
 }

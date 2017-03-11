@@ -11,7 +11,8 @@ public class Main {
 //        babyBirths.testWhatIsNameInYear();
 //        babyBirths.yearOfHighestRank("Mason", "M");
 //        babyBirths.testYearOfHighestRank();
-        babyBirths.testAverageRank();
+//        babyBirths.testAverageRank();
+        babyBirths.testGetTotalBirthsRankedHigher();
     }
 
 }
