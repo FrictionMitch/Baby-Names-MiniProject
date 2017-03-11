@@ -152,6 +152,32 @@ public class BabyBirths {
     }
     public void testYearOfHighestRank() {
         System.out.println("Mason was ranked highest in the year: " +
-                           yearOfHighestRank("MIke", "M"));
+                           yearOfHighestRank("Mason", "M"));
+    }
+
+    public double getAverageRank (String name, String gender) {
+        double averageRank = -1;
+        int numberOfFiles = 0;
+        int totalRank = 0;
+        DirectoryResource dir = new DirectoryResource();
+        for(File file : dir.selectedFiles()) {
+            numberOfFiles++;
+            String yearString = file.getName().substring(3, 7);
+            int year = Integer.parseInt(yearString);
+            int currentRank = getRank(year, name, gender);
+            if(currentRank == -1){
+                currentRank = 0;
+            }
+            totalRank += currentRank;
+        }
+        if(totalRank == 0) {
+            return averageRank;
+        } else {
+            return averageRank = (double)(totalRank)/(double)(numberOfFiles);
+        }
+    }
+
+    public void testAverageRank() {
+        System.out.println("Mason\'s average was: " + getAverageRank("Mason", "M"));
     }
 }

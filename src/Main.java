@@ -10,7 +10,8 @@ public class Main {
 //        babyBirths.testGetName();
 //        babyBirths.testWhatIsNameInYear();
 //        babyBirths.yearOfHighestRank("Mason", "M");
-        babyBirths.testYearOfHighestRank();
+//        babyBirths.testYearOfHighestRank();
+        babyBirths.testAverageRank();
     }
 
 }
